@@ -46,22 +46,3 @@ return seqIdx === sequence.length;
 Time complexity: O(n)
 Space complexity: O(1)
 
-###Solution 3 (Aka my personal solution):
-```js
-function isValidSubsequence(array, sequence) {
-    let pointer;
-    if (array.includes(sequence[0])) {
-        pointer = array.indexOf(sequence[0]);
-     } else {
-        return false;
-     }
-   for (let i = 1; i < sequence.length; i++) {
-     if (pointer > array.indexOf(sequence[i])) {
-      return false;
-     } else {
-        pointer = array.indexOf(sequence[0])
-     } //if next sequence num exists, and it comes after pointer then we're good, otherwise return  false
-   }
-  return true;
-}
-```
